@@ -1,0 +1,50 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <!-- Video Background -->
+     <div class="video-background">
+        <video autoplay muted loop>
+            <source src="video.mp4" type="video/mp4">
+            <!-- Add other formats if needed -->
+           <!-- <source src="your-video.webm" type="video/webm">-->
+        </video>
+    </div>
+    <div class="login-container">
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+
+    <script>
+        // Listen for form submission
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the form from submitting the traditional way
+            
+            // Get the form data
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Store the data in localStorage
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password); // Optional, but don't store passwords in plain text
+            
+            // Redirect to homepage
+            window.location.href = 'homepage1.html';
+        });
+    </script>
+</body>
+</html>
